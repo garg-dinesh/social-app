@@ -1,0 +1,18 @@
+.logout-button {
+  background: inherit !important;
+  border: none !important;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header-item {
+  text-decoration: none;
+  color: #fff;
+  padding: 6px;
+}
+
+.header-item:hover {
+  color: #fff;
+}
