@@ -20,14 +20,14 @@ function NewPost() {
       title: values.title,
       body: values.body,
       userId: user.id,
-      sharedUsers: sharedUser.id ? [sharedUser.id] : [],
+      sharedUsers: sharedUser.id ? [sharedUser.id, user.id] : [user.id],
     };
     setLocalStorageItem("posts", [...getLocalStorageItem("posts"), _post]);
     navigate(`/posts/${_post.id}`);
   };
   return (
     <Layout>
-      <h2>new post</h2>
+      <h2>Create New Post here..</h2>
       <PostForm onSubmit={handleNewPost} />
     </Layout>
   );

@@ -12,7 +12,7 @@ export const getUserPosts = async (id) => {
   if (res.status === 200) {
     res = {
       ...res,
-      data: res.data.map((item) => ({ ...item, sharedUsers: [] })),
+      data: res.data.map((item) => ({ ...item, sharedUsers: [item.userId] })),
     };
   }
 

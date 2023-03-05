@@ -19,7 +19,12 @@ function Login() {
           setLocalStorageItem("users", res.data);
         }
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        toast.error("Users not fetched some network issue", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+        });
+      });
   }, []);
 
   const initialValues = { email: "" };

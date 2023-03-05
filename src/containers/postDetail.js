@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { Alert, Button, Form } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
   getLocalStorageItem,
   setLocalStorageItem,
@@ -57,29 +56,15 @@ function PostDetail() {
   };
 
   const handleRemovePost = (postId) => {
-    if (getLocalStorageItem("user").id === post.userId) {
-      setLocalStorageItem(
-        "posts",
-        posts.filter((post) => post.id !== postId)
-      );
-      navigate("/posts");
-    } else {
-      toast("This post is published by another user!!", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
-    }
+    setLocalStorageItem(
+      "posts",
+      posts.filter((post) => post.id !== postId)
+    );
+    navigate("/posts");
   };
 
   const handleEdit = () => {
-    if (getLocalStorageItem("user").id === post.userId) {
-      setIsFlag({ ...isFlag, isEdit: !isFlag.isEdit });
-    } else {
-      toast("This post is published by another user!!", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
-    }
+    setIsFlag({ ...isFlag, isEdit: !isFlag.isEdit });
   };
 
   const handleUpdate = (values) => {

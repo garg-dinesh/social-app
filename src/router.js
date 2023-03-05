@@ -8,7 +8,7 @@ import PostDetail from "./containers/postDetail";
 
 const PrivateRoute = () => {
   const user = getLocalStorageItem("user");
-  return true ? <Outlet /> : <Navigate to="/" />;
+  return user ? <Outlet /> : <Navigate to="/" />;
 };
 
 function Router() {
