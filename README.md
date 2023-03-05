@@ -6,7 +6,7 @@ Take a clone of the project as mentioned below:
   
 Execute npm install in the root directory of the project.
 
-Login the app below mentioned emails:
+Execute npm start and login the app below mentioned emails:
 Sincere@april.biz
 Shanna@melissa.tv
 Nathan@yesenia.net
